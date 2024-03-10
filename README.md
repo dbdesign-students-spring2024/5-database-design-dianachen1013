@@ -97,3 +97,16 @@ Composite Primary Key: student_id, section_id, assignment_id
 ## ER-Relationship Diagram
 Here is the ER-Relationship Diagram of the 4NF:
 ![ER-Diagram](/images/ER-Relationship%20Diagram.drawio.png)
+
+## Description of changes
+In the process of making the data 4NF-compliant, the following changes were implemented from the original dataset structure:  
+
+1. Decomposition into Multiple Tables: The original dataset was decomposed into six distinct tables: Courses, Professors, Classrooms, Assignments, Sections, and Student Assignments. This decomposition was guided by the need to separate different entities and their attributes into more manageable, logically distinct units.  
+
+2. Elimination of Multi-Valued Dependencies: The key to achieving 4NF compliance was to eliminate multi-valued dependencies. In the original dataset, there were implicit multi-valued dependencies, such as a professor being associated with multiple assignments and, separately, assignments being linked to multiple relevant readings. By creating separate tables for each entity and defining clear relationships among them, these multi-valued dependencies were resolved.  
+
+3. Introduction of Primary and Foreign Keys: Each table was given a primary key to uniquely identify its rows. For example, course_id in the Courses table and professor_id in the Professors table. Foreign keys were introduced to establish relationships between tables, such as course_id in the Assignments table linking back to the Courses table, ensuring referential integrity and enabling a network of relationships that mirror real-world interactions among the entities.  
+
+4. Normalizing Relationships: By structuring the data into separate tables with defined relationships (one-to-many and many-to-one), the schema now accurately represents the real-world interactions without redundancy. For instance, a course can have many sections, but each section is taught in a specific classroom by a specific professor, illustrating a one-to-many relationship from Professors and Classrooms to Sections.  
+
+5. Supporting Complex Queries with Reduced Redundancy: The restructured, 4NF-compliant design supports more complex queries by allowing data to be joined across tables based on relationships. This structure reduces redundancy (e.g., professor emails no longer need to be repeated for each assignment) and enhances the database's overall efficiency and scalability.

@@ -95,5 +95,5 @@ Composite Primary Key: student_id, section_id, assignment_id
 | 3          | S003       | A004          | 04.07.21 | 65    |
 
 ## ER-Relationship Diagram
-Here is the ER-Relationship Diagram of the 4NF  
-![Image](./images/ER-Relationship Diagram.drawio.png)
+Here is the ER-Relationship Diagram of the 4NF:
+![ER-Diagram](/images/ER-Relationship%20Diagram.drawio.png)
